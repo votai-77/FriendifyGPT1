@@ -9,4 +9,9 @@ export const config={
     //prompts
     promptBot: 'Xin chào bạn nhỏ',
     promptsChatUser: 'Xin chào bạn bot',
+
+    //Generate Image
+    promptsStandard: 'dog-Stadard',
+    promptsPro: 'cat-Pro',
+
 }
