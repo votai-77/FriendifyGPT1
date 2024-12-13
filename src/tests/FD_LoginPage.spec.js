@@ -1,5 +1,5 @@
 import { chromium, test } from "@playwright/test";
-import Login from "../page/login";
+import Login from "../pages/login";
 
 let browser;
 let page;

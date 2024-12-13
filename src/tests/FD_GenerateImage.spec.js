@@ -1,6 +1,6 @@
 import { chromium, test } from "@playwright/test";
-import Login from "../page/login";
-import GenerateImage from "../page/generateImage";
+import Login from "../pages/login";
+import GenerateImage from "../pages/generateImage";
 
 let browser;
 let page;
