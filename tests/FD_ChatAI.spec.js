@@ -10,8 +10,7 @@ let chatai;
 test.beforeEach(async () => {
   browser = await chromium.launch({ headless: false });
   page = await browser.newPage();
-  login = new Login(page);
-  chatai = new ChatAI(page);
+  
 });
 test.afterEach(async () => {
   await page.close();

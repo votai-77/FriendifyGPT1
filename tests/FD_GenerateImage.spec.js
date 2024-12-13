@@ -21,7 +21,8 @@ test.describe("Generate Image", async () => {
     await test.step("Generate image standard with account not enough point", async () => {
       await login.navigation();
       await login.loginapp();
-      await generateStand.generateStandard();
+      // await generateStand.generateStandard();
+      await generateStand.generatePro();
     });
   });
 });
