@@ -1,5 +1,5 @@
 const { TIMEOUT } = require("dns");
-const { config } = require("../data/config");
+const { config } = require("../config/config");
 const { expect } = require("@playwright/test");
 
 class GenerateImage {
@@ -52,4 +52,4 @@ class GenerateImage {
     await expect(resultToast).toHaveText(/Diamond is not enough/);
   }
 }
-module.exports = GenerateImage;
+export default GenerateImage;

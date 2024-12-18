@@ -1,6 +1,7 @@
-import { chromium, test } from "@playwright/test";
-import Login from "../pages/login";
-import GenerateImage from "../pages/generateImage";
+import { test, expect } from "@playwright/test";
+
+import Login from "../src/pages/login";
+import GenerateImage from "../src/pages/generateImage";
 
 let browser;
 let page;

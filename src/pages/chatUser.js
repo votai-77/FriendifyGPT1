@@ -1,4 +1,4 @@
-import { config } from "../data/config";
+import { config } from "../config/config";
 
 class ChatUser {
   constructor(page) {
@@ -46,3 +46,4 @@ class ChatUser {
 
   }
 }
+export default ChatUser;

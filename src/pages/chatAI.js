@@ -1,4 +1,4 @@
-const { config } = require("../data/config");
+const { config } = require("../config/config");
 
 class ChatAI {
   constructor(page) {
@@ -22,4 +22,4 @@ class ChatAI {
     await this.icon_back.click();
   }
 }
-module.exports = ChatAI;
+export default ChatAI;

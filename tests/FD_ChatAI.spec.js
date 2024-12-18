@@ -1,6 +1,4 @@
-import { chromium, test } from "@playwright/test";
-import Login from "../../page/login";
-import ChatAI from "../../page/chatAI";
+import { test, expect } from "@playwright/test";
 
 let browser;
 let page;
