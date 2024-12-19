@@ -1,3 +1,5 @@
+import { config } from "../config/config";
+
 class Navigation{
     constructor(page)
     {
@@ -6,12 +8,12 @@ class Navigation{
     }
  
     
-    async navigationLoginScreen()
+    async landingPageFriendify()
     {
-        await this.page.goto("https://friendify.ai/");
+        await this.page.goto(config.url);
     }
     async accessLoginScreen(){ 
-        this.btn_signIn.click();
+        await this.btn_signIn.click();
     }
 
 }

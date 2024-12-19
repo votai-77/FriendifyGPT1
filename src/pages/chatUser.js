@@ -9,6 +9,9 @@ class ChatUser {
     this.edt_search = this.page.locator(
       '//*[@id="__next"]/div[1]/div/div/div/div[3]/div/div/div[1]/input'
     );
+    this.list_user = this.page.locator(
+      '//*[@id="__next"]/div[1]/div/div/div/div[3]/div/div/div[2]/div/div/div'
+    );
     this.des_user = this.page.locator(
       '//*[@id="__next"]/div[1]/div/div/div/main/div/div/div[2]/div/div[2]/form/div/textarea'
     );
@@ -27,23 +30,33 @@ class ChatUser {
       '//*[@id="__next"]/div[1]/div/div/div/main/div/div/div[2]/div/div[3]/div[2]/form/div/div/button'
     );
     this.result_bot = this.page.locator(
-      '//*[@id="__next"]/div[1]/div/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/div/div/div[18]/div/div[2]'
+      '//*[@id="__next"]/div[1]/div/div/div/main/div/div/div[1]/div/div/div[2]/div[2]/div/div/div[14]/div/h3'
     );
   }
   async chatUser() {
     await this.title_Chat.click();
-    await this.edt_search.filter({ hastext: /votai/ }).click();
+    await this.edt_search.fill(config.search_user);
+    await this.page.waitForTimeout(1000); // Chờ 1 giây hoặc sử dụng điều kiện chờ khác
+    await this.list_user.filter({ hasText: /^votai$/ }).click();
+    await this.page.waitForTimeout(1000); // Chờ 1 giây hoặc sử dụng điều kiện chờ khác
+
     await this.des_user.fill(config.desUser);
+    await this.page.waitForTimeout(1000); // Chờ 1 giây hoặc sử dụng điều kiện chờ khác
+
     await this.btn_send_user.click();
-    await page.waitForTimeout(3000);
   }
-  async chatBot(){
+  async chatBot() {
+    await this.page.waitForTimeout(1000); // Chờ 1 giây hoặc sử dụng điều kiện chờ khác
+
     await this.icon_bot.click();
     await this.des_bot.fill(config.desBot);
-    await this.btn_send_bot.click();
-    await this.result_bot.innerText();
-    
+    await this.page.waitForTimeout(1000); // Chờ 1 giây hoặc sử dụng điều kiện chờ khác
 
+    await this.btn_send_bot.click();
+    await this.result_bot.isVisible();
+    await this.page.waitForTimeout(1000); // Chờ 1 giây hoặc sử dụng điều kiện chờ khác
+    const resultBot = await this.result_bot.innerText();
+    console.log(resultBot);
   }
 }
 export default ChatUser;

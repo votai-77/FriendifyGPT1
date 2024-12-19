@@ -47,7 +47,6 @@ class GenerateImage {
     await this.typing.fill(config.promptsStandard);
     await this.btn_generate_pro.click();
     await this.btn_send.click();
-    // const resultPro = this.result_pro.innerText();
     const resultToast = await this.toast.innerText();
     await expect(resultToast).toHaveText(/Diamond is not enough/);
   }
