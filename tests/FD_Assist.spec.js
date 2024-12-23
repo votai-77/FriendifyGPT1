@@ -1,11 +1,13 @@
-import { chromium, test } from "@playwright/test";
-import Login from "../src/pages/login";
+import { test, chromium } from "@playwright/test";
 import Navigation from "../src/pages/navigation";
+import Login from "../src/pages/login";
+import Assist from "../src/pages/Assist";
 
 let browser;
 let page;
-let login;
 let navi;
+let login;
+let assist;
 
 test.beforeEach(async () => {
   browser = await chromium.launch();
@@ -26,6 +28,10 @@ test.describe("authen", async () => {
     });
     await test.step("Login with account registed", async () => {
       await login.loginapp();
+    });
+    await test.step("Summary PDF", async () => {
+      await assist.clickAssist();
+      await assist.summaryPDF();
     });
   });
 });
