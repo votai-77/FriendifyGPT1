@@ -22,15 +22,6 @@ class ChatAI {
     await this.btn_icon_send.click();
     const resultBot = await this.result_bot.innerText();
     console.log(resultBot);
-   
-    // if(this.toast.isVisible())
-    // {
-    //   await expect(this.toast).toHaveText(/Diamond is not enough/)
-    // }
-    // else{
-    //   console.log(resultBot);
-    // }
-
     await this.icon_back.click();
   }
 }

@@ -14,6 +14,7 @@ test.beforeEach(async () => {
   page = await browser.newPage();
   navi = new Navigation(page);
   login = new Login(page);
+  assist = new Assist(page);
 });
 test.afterEach(async () => {
   await page.close();
@@ -32,6 +33,8 @@ test.describe("authen", async () => {
     await test.step("Summary PDF", async () => {
       await assist.clickAssist();
       await assist.summaryPDF();
+      await assist.summaryAudio();
+      await assist.summaryImage();
     });
   });
 });

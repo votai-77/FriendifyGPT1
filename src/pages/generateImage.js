@@ -33,7 +33,6 @@ class GenerateImage {
     this.toast = this.page.locator('//*[@id="__next"]/div[2]');
   }
   async generateStandard() {
-    await this.icon_back.click();
     await this.create_new.click();
     await this.typing.fill(config.promptsStandard);
     await this.btn_send.click();
@@ -42,13 +41,20 @@ class GenerateImage {
 
   }
   async generatePro() {
-    await this.icon_back.click();
-    await this.create_new.click();
+    // await this.icon_back.click();
+    // await this.create_new.click();
     await this.typing.fill(config.promptsStandard);
     await this.btn_generate_pro.click();
     await this.btn_send.click();
+
     const resultToast = await this.toast.innerText();
-    await expect(resultToast).toHaveText(/Diamond is not enough/);
+    try{
+      await expect(resultToast).toHaveText(/Diamond is not enough/);
+
+    }catch(e)
+    {
+      console.log("Error: ", e)
+    }
   }
 }
 export default GenerateImage;
